@@ -37,7 +37,7 @@ const PublicationsSection = ({ data }) => {
   };
 
   return (
-    <section ref={sectionRef} className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 px-3 sm:px-4 md:px-6 lg:px-8 relative overflow-hidden">
       {/* Technical Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -51,17 +51,17 @@ const PublicationsSection = ({ data }) => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-           <span className="text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text"> Publications & Research</span>
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-5 md:mb-6">
+           <span className="text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text">Research and Publications</span>
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto text-justify">
+          <div className="w-24 sm:w-28 md:w-32 h-1 sm:h-1.5 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 mx-auto mb-4 sm:mb-5 md:mb-6"></div>
+          <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-3xl mx-auto px-4 text-justify">
             Contributing through research in AI, computer vision, and multimedia processing
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {data.map((publication, index) => (
             <div
               key={publication.id}
@@ -73,46 +73,46 @@ const PublicationsSection = ({ data }) => {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <Card className="bg-gradient-to-br from-slate-800/70 via-slate-800/50 to-slate-900/70 border border-emerald-400/20 backdrop-blur-sm p-8 hover:bg-slate-800/80 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-400/10 h-full">
-                <div className="space-y-6 h-full flex flex-col">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="p-3 bg-gradient-to-r from-emerald-500/20 to-cyan-600/20 rounded-xl border border-emerald-400/30">
-                      <FileText className="w-7 h-7 text-emerald-400" />
+              <Card className="bg-gradient-to-br from-slate-800/70 via-slate-800/50 to-slate-900/70 border border-emerald-400/20 backdrop-blur-sm p-5 sm:p-6 md:p-8 hover:bg-slate-800/80 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-400/10 h-full">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6 h-full flex flex-col">
+                  <div className="flex items-start justify-between gap-3 sm:gap-4">
+                    <div className="p-2 sm:p-2.5 md:p-3 bg-gradient-to-r from-emerald-500/20 to-cyan-600/20 rounded-xl border border-emerald-400/30">
+                      <FileText className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7 text-emerald-400" />
                     </div>
-                    <Badge className={`${getTypeColor(publication.type)} text-base px-3 py-1 border`}>
+                    <Badge className={`${getTypeColor(publication.type)} text-xs sm:text-sm md:text-base px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 border`}>
                       {publication.type}
                     </Badge>
                   </div>
 
-                  <div className="flex-grow space-y-4">
-                    <h3 className="text-xl font-bold text-white leading-tight">
+                  <div className="flex-grow space-y-3 sm:space-y-4">
+                    <h3 className="text-lg sm:text-xl md:text-xl font-bold text-white leading-tight">
                       {publication.title}
                     </h3>
 
-                    <div className="space-y-3 text-base text-gray-400">
+                    <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-400">
                       <div className="flex items-center gap-2">
-                        <Award className="w-5 h-5" />
-                        <span className="font-medium">{publication.venue}</span>
+                        <Award className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                        <span className="font-medium break-words">{publication.venue}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <BookOpen className="w-5 h-5" />
-                        <span>{publication.publisher}</span>
+                        <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                        <span className="break-words">{publication.publisher}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Calendar className="w-5 h-5" />
+                        <Calendar className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                         <span>{publication.year}</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-6">
+                  <div className="pt-4 sm:pt-5 md:pt-6">
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-slate-900 transition-all duration-200 text-base py-3"
+                      className="w-full border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-slate-900 transition-all duration-200 text-sm sm:text-base py-2 sm:py-2.5 md:py-3"
                       onClick={() => window.open(publication.link, '_blank')}
                     >
-                      <ExternalLink className="w-5 h-5 mr-2" />
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                       View Publication
                     </Button>
                   </div>
