@@ -43,23 +43,23 @@ const Header = ({ activeSection }) => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-3 sm:py-4">
+          {/* Logo - Responsive */}
           <div 
-            className="text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text cursor-pointer hover:scale-105 transition-transform"
+            className="text-lg sm:text-xl md:text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text cursor-pointer hover:scale-105 transition-transform"
             onClick={() => scrollToSection("home")}
           >
             Maahi Patel
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation - Shows on large screens */}
+          <nav className="hidden xl:flex items-center space-x-6 2xl:space-x-8">
             {navigationItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-all duration-200 hover:text-emerald-400 hover:-translate-y-0.5 ${
+                className={`text-sm 2xl:text-base font-medium transition-all duration-200 hover:text-emerald-400 hover:-translate-y-0.5 ${
                   activeSection === item.id 
                     ? "text-emerald-400 border-b-2 border-emerald-400" 
                     : "text-gray-300"
@@ -71,27 +71,27 @@ const Header = ({ activeSection }) => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Responsive */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-slate-900/98 backdrop-blur-md border-t border-emerald-400/20">
-            <nav className="flex flex-col py-4">
+          <div className="xl:hidden absolute top-full left-0 right-0 bg-slate-900/98 backdrop-blur-md border-t border-emerald-400/20 max-h-[70vh] overflow-y-auto">
+            <nav className="flex flex-col py-2 sm:py-4">
               {navigationItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-3 text-left transition-colors ${
+                  className={`px-4 sm:px-6 py-3 sm:py-3.5 text-left text-sm sm:text-base transition-colors ${
                     activeSection === item.id 
                       ? "text-emerald-400 bg-emerald-400/10" 
                       : "text-gray-300 hover:text-emerald-400 hover:bg-emerald-400/5"
