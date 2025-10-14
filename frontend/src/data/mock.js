@@ -17,7 +17,7 @@ export const mockData = {
       institution: "Rice University",
       degree: "Master of Computer Science",
       location: "Houston, TX, USA",
-      duration: "Aug 2025 - Expected 2027",
+      duration: "Aug 2025 - Expected 2026",
       gpa: null
     },
     {
